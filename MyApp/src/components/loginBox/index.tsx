@@ -15,11 +15,15 @@ import {
 } from 'react-native';
 import {InputContainer, Footer} from './styles';
 import {User, Lock} from 'react-native-feather';
+import {useNavigation} from '@react-navigation/native';
 
 export default function LoginBox() {
   const [user, setUser] = useState('');
   const [color, setColor] = useState('#B2B5B4');
   const [password, setPassword] = useState('');
+
+  const navigation = useNavigation();
+
   const setToastMessage = (msg: string) => {
     ToastAndroid.showWithGravity(msg, ToastAndroid.LONG, ToastAndroid.BOTTOM);
   };
@@ -52,7 +56,9 @@ export default function LoginBox() {
 
   function Logado() {
     if (user === '' && password === '') {
-      Alert.alert('tudo ok');
+      navigation.navigate('Home');
+      setUser('');
+      setPassword('');
     } else {
       Alert.alert('usuario ou senha incorretos!');
       setColor('#ff0000');

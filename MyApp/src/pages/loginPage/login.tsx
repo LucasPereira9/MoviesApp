@@ -13,7 +13,7 @@ import {
 import {Container} from './styles';
 import LoginBox from '../../components/loginBox';
 
-export default function App() {
+export default function Login() {
   const moveAnim = useRef(new Animated.Value(0)).current;
   const fadeAnim = useRef(new Animated.Value(0)).current;
 
