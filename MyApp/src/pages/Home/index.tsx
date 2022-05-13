@@ -1,19 +1,25 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {TouchableOpacity, View} from 'react-native';
-import {Text} from 'react-native-svg';
+import {Container} from './styles';
+import {StatusBar, Text} from 'react-native';
+import Genders from '../../components/genderContainer/index';
+import Top from '../../components/topContainer/index';
 
-export default function Home({navigation}: any) {
-  function teste() {
-    navigation.navigate('Login');
-  }
+export default function Home() {
   return (
-    <View style={{flex: 1, backgroundColor: '#00fff2'}}>
-      <TouchableOpacity
-        style={{width: 100, height: 100, backgroundColor: '#fff'}}
-        onPress={teste}>
-        <Text>TESTE</Text>
-      </TouchableOpacity>
-    </View>
+    <Container>
+      <StatusBar backgroundColor={'#212334'} />
+      <Top />
+      <Genders />
+      <Text
+        style={{
+          margin: 12,
+          color: '#fff',
+          fontSize: 17,
+          fontFamily: 'Roboto-Italic',
+        }}>
+        Destaques
+      </Text>
+    </Container>
   );
 }

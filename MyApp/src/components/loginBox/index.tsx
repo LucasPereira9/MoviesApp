@@ -59,6 +59,7 @@ export default function LoginBox() {
       navigation.navigate('Home');
       setUser('');
       setPassword('');
+      setColor('#B2B5B4');
     } else {
       Alert.alert('usuario ou senha incorretos!');
       setColor('#ff0000');
